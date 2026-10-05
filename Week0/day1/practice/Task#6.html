@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6 - Contact Form</title>
+  </head>
+  <body>
+    <h1>Contact Us</h1>
+    <p>Fill out the form below. Fields marked with * are required.</p>
+
+    <!-- Standard form structure -->
+    <form action="#" method="post">
+      
+      <!-- Text Input -->
+      <div>
+        <label for="name">Full Name *:</label><br>
+        <input type="text" id="name" name="name" required placeholder="e.g. Jane Doe">
+      </div>
+      <br>
+
+      <!-- Email Input -->
+      <div>
+        <label for="email">Email Address *:</label><br>
+        <input type="email" id="email" name="email" required placeholder="jane@example.com">
+      </div>
+      <br>
+
+      <!-- Telephone Input (Optional) -->
+      <div>
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone" placeholder="+1 555-123-4567">
+      </div>
+      <br>
+
+      <!-- Dropdown (Select) -->
+      <div>
+        <label for="topic">Inquiry Topic *:</label><br>
+        <select id="topic" name="topic" required>
+          <option value="">-- Select a topic --</option>
+          <option value="general">General Inquiry</option>
+          <option value="course">Course Question</option>
+          <option value="support">Technical Support</option>
+        </select>
+      </div>
+      <br>
+
+      <!-- Radio Buttons -->
+      <fieldset>
+        <legend>Preferred Contact Method *:</legend>
+        <input type="radio" id="email-pref" name="contact_pref" value="email" checked required>
+        <label for="email-pref">Email</label>
+        
+        <input type="radio" id="phone-pref" name="contact_pref" value="phone" required>
+        <label for="phone-pref">Phone</label>
+      </fieldset>
+      <br>
+
+      <!-- Textarea for longer messages -->
+      <div>
+        <label for="message">Your Message *:</label><br>
+        <textarea id="message" name="message" rows="5" cols="40" required placeholder="Write your message here..."></textarea>
+      </div>
+      <br>
+
+      <!-- Checkbox -->
+      <div>
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">I agree to be contacted regarding this message *</label>
+      </div>
+      <br>
+
+      <!-- Submit Button -->
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+
+    </form>
+  </body>
+</html>

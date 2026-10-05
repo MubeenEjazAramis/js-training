@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4 - Images & Accessibility</title>
+  </head>
+  <body>
+    <h1>HTML Images & Accessibility</h1>
+    <p>A simple guide on how to use images and make them accessible.</p>
+
+    <!-- 1. Meaningful Image (Needs descriptive alt text for screen readers) -->
+    <h2>1. Meaningful Image</h2>
+    <img 
+      src="https://placehold.co/600x300/e2e8f0/1e293b?text=Solar+System+Diagram" 
+      alt="Diagram of the Sun and planets in our solar system" 
+      width="600" 
+      height="300"
+    >
+
+    <hr>
+
+    <!-- 2. Decorative Image (Use empty alt="" so screen readers ignore it) -->
+    <h2>2. Decorative Image</h2>
+    <img 
+      src="https://placehold.co/600x40/f1f5f9/94a3b8?text=~~~~~+Divider+~~~~~" 
+      alt="" 
+      width="600" 
+      height="40"
+    >
+
+    <hr>
+
+    <!-- 3. Figure and Figcaption (Semantically groups an image with its visible caption) -->
+    <h2>3. Figure and Figcaption</h2>
+    <figure>
+      <img 
+        src="https://placehold.co/600x350/dbeafe/1e3a8a?text=Mountain+Landscape" 
+        alt="Snowy mountain peaks reflecting in a lake at sunrise" 
+        width="600" 
+        height="350"
+      >
+      <figcaption>Figure 1: Mount Rainier at dawn.</figcaption>
+    </figure>
+  </body>
+</html>

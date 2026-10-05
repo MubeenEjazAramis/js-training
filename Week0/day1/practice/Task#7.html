@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7 - Semantic HTML Layout</title>
+  </head>
+  <body>
+    <!-- Header area for site branding and navigation -->
+    <header>
+      <h1>Developer Tech Blog</h1>
+      <p>A clean layout built with modern semantic HTML5 elements.</p>
+
+      <!-- Main site navigation -->
+      <nav>
+        <ul>
+          <li><a href="#article-1">Semantic Web</a></li>
+          <li><a href="#article-2">Accessible Forms</a></li>
+          <li><a href="#sidebar">Resources</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <hr>
+
+    <!-- Main content of the document (should be unique per page) -->
+    <main>
+      
+      <!-- Section for grouping related content -->
+      <section>
+        <h2>Featured Articles</h2>
+
+        <!-- Article 1: Independent, self-contained content block -->
+        <article id="article-1">
+          <h3>Why Semantic HTML Matters</h3>
+          <p><small>Published on: October 5, 2026 | By Alex Rivera</small></p>
+          <p>
+            Semantic elements give meaning to web pages rather than just defining visual boxes. 
+            Using tags like <code>&lt;header&gt;</code> and <code>&lt;article&gt;</code> helps SEO and screen readers.
+          </p>
+        </article>
+
+        <!-- Article 2 -->
+        <article id="article-2">
+          <h3>Building Accessible Forms</h3>
+          <p><small>Published on: October 3, 2026 | By Alex Rivera</small></p>
+          <p>
+            Always connect each form input to an explicit <code>&lt;label&gt;</code>. 
+            This ensures accessibility and a better user experience for everyone.
+          </p>
+        </article>
+      </section>
+
+      <hr>
+
+      <!-- Aside for sidebar, related links, or author info -->
+      <aside id="sidebar">
+        <h3>About & Resources</h3>
+        <p>Alex Rivera is a web developer learning HTML5 standards.</p>
+        <ul>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Semantics" target="_blank" rel="noopener noreferrer">MDN Semantics Glossary</a></li>
+          <li><a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/" target="_blank" rel="noopener noreferrer">W3C Accessibility Intro</a></li>
+        </ul>
+      </aside>
+    </main>
+
+    <hr>
+
+    <!-- Footer for copyright, legal, or contact info -->
+    <footer>
+      <p>&copy; 2026 Developer Tech Blog. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
