@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3 - HTML Links</title>
+  </head>
+  <body>
+    <h1 id="top">HTML Links Demo</h1>
+    <p>A quick demo of the 4 main types of HTML links.</p>
+
+    <!-- Navigation Menu (Using anchor links) -->
+    <nav>
+      <ul>
+        <li><a href="#internal">Internal Link</a></li>
+        <li><a href="#external">External Link</a></li>
+        <li><a href="#anchor">Same-page Link</a></li>
+        <li><a href="#email">Email Link</a></li>
+      </ul>
+    </nav>
+
+    <hr>
+
+    <!-- 1. Internal Link (Connects to another file in the same folder) -->
+    <section id="internal">
+      <h2>1. Internal Link</h2>
+      <a href="Task#1.html">Go to Task 1</a>
+    </section>
+
+    <!-- 2. External Link (Opens a different website securely in a new tab) -->
+    <section id="external">
+      <h2>2. External Link</h2>
+      <a href="https://developer.mozilla.org" target="_blank" rel="noopener noreferrer">Visit MDN Web Docs</a>
+    </section>
+
+    <!-- 3. Same-Page Anchor (Jumps to a specific ID on this page) -->
+    <section id="anchor">
+      <h2>3. Anchor Link</h2>
+      <a href="#footer">Jump to the bottom of this page</a>
+    </section>
+
+    <!-- 4. Email Link (Opens the default mail app) -->
+    <section id="email">
+      <h2>4. Email Link</h2>
+      <a href="mailto:mubeen.ejaz@aramissolutions.com">Send an Email</a>
+    </section>
+
+    <hr>
+
+    <!-- Target section for the anchor jump -->
+    <section id="footer">
+      <h2>Bottom Section</h2>
+      <a href="#top">Back to top</a>
+    </section>
+  </body>
+</html>
