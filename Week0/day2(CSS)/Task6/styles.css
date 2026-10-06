@@ -1,0 +1,48 @@
+body {
+  font-family: Arial;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+/* Basic Button Design */
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; /* Hath wala nishan (hand icon) lane ke liye */
+}
+
+/* Primary Button */
+.btn-primary {
+  background-color: blue;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: darkblue; /* Mouse over effect */
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background-color: gray;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: dimgray;
+}
+
+/* Keyboard Tab Focus (Smart Outline) */
+.btn:focus-visible {
+  outline: 3px solid skyblue;
+  outline-offset: 3px; /* Button aur outline ke beech space ke liye */
+}
+
+/* Disabled Button */
+.btn:disabled {
+  background-color: lightgray;
+  color: gray;
+  cursor: not-allowed; /* Stop wala red circle dikhane ke liye */
+  opacity: 0.6; /* Faded effect */
+}

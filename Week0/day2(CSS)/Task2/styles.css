@@ -1,0 +1,61 @@
+body {
+  font-family: Arial;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* Test 1 */
+p {
+  color: gray; /* element (0,0,1) */
+}
+
+.highlight-text {
+  color: green; /* class (0,1,0) - Class wins over tag */
+}
+
+/* Test 2 */
+.card.special.promoted {
+  background-color: red; /* 3 classes (0,3,0) */
+  padding: 15px;
+}
+
+#featured-card {
+  background-color: blue; /* 1 ID (1,0,0) - ID always wins even against 100 classes */
+  color: white;
+  padding: 15px;
+}
+
+/* Test 3 */
+.status-pill {
+  background-color: yellow;
+  padding: 10px;
+}
+
+.status-pill {
+  background-color: purple; /* This wins because it is written later/down below */
+  color: white;
+}
+
+/* Test 4: Assignment */
+
+/* (1 ID, 1 Class, 1 Tag) */
+#nav .item a {
+  color: skyblue; 
+}
+
+/* (0 ID, 1 Pseudo-class, 2 Tags) */
+ul li:first-child {
+  color: orange;
+}
+
+/* (0 ID, 2 Classes, 0 Tag) */
+.btn.primary {
+  background-color: teal;
+  color: white;
+  padding: 10px;
+}
+
+/* (0 ID, 1 Pseudo-class, 1 Tag) */
+a:hover {
+  color: red;
+}

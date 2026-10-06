@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Units Test</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <h1>Testing CSS Units: px, em, rem, %</h1>
+  <p>Note: By default, the main HTML root size is 16px.</p>
+
+  <hr>
+
+  <!-- Test 1: Normal Parent -->
+  <div class="normal-parent">
+    <h2>1. Normal Parent (Font size: 16px)</h2>
+    <p class="size-px">px: 24px</p>
+    <p class="size-em">em: 1.5em (1.5 x 16 = 24px)</p>
+    <p class="size-rem">rem: 1.5rem (1.5 x 16 = 24px)</p>
+    <p class="size-pct">%: 150% (150% of 16 = 24px)</p>
+    <p><i>Result: They all look exactly the same size here.</i></p>
+  </div>
+
+  <!-- Test 2: Big Parent -->
+  <div class="big-parent">
+    <h2>2. Big Parent (Font size: 24px)</h2>
+    <p class="size-px">px: 24px (Stays the same)</p>
+    <p class="size-em">em: 1.5em (It grew! 1.5 x 24 = 36px)</p>
+    <p class="size-rem">rem: 1.5rem (Still 24px. It ignores the parent)</p>
+    <p class="size-pct">%: 150% (It grew too! 150% of 24 = 36px)</p>
+  </div>
+
+  <hr>
+
+  <!-- Test 3: The Nesting Bug -->
+  <div>
+    <h2>3. The Nesting Problem (em vs rem)</h2>
+
+    <h3>Using 'em' (Bad idea)</h3>
+    <div class="bad-em">
+      Outer Box (1.2em)
+      <div class="bad-em">
+        Inside Box (It multiplies and gets bigger)
+        <div class="bad-em">
+          Deep Inside (It gets huge!)
+        </div>
+      </div>
+    </div>
+
+    <h3>Using 'rem' (Good idea)</h3>
+    <div class="good-rem">
+      Outer Box (1.2rem)
+      <div class="good-rem">
+        Inside Box (Stays exactly the same)
+        <div class="good-rem">
+          Deep Inside (Still the same, no multiplying!)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Test 4: Root Font Size Change Effect -->
+  <div>
+    <h2>4. Root Font Size Test (html font-size)</h2>
+    <p>By default, root (html) font size is 16px. If we change root font size:</p>
+    <div class="root-test-box">
+      <p class="size-px"><b>px: 24px</b> - Fixed size (Does NOT change when root font-size changes)</p>
+      <p class="size-rem"><b>rem: 1.5rem</b> - Relative to root (Becomes 30px if root is changed to 20px)</p>
+    </div>
+  </div>
+
+</body>
+</html>

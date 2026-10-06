@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Specificity Test</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <div>
+    <h1>CSS Specificity Test</h1>
+    <p>Checking how the browser decides which CSS rule wins when there is a clash.</p>
+  </div>
+
+  <hr>
+
+  <!-- Test 1 -->
+  <div>
+    <h2>1. Class vs Element (Tag)</h2>
+    <p class="highlight-text">This text should be green because Class is stronger than a simple paragraph tag.</p>
+  </div>
+
+  <!-- Test 2 -->
+  <div>
+    <h2>2. ID vs Classes</h2>
+    <div id="featured-card" class="card special promoted">
+      This box has 3 classes and 1 ID. But ID is the boss, so it will be blue, not red!
+    </div>
+  </div>
+
+  <!-- Test 3 -->
+  <div>
+    <h2>3. Tie-breaker (Same power)</h2>
+    <span class="status-pill">If two classes have the same power, the one written at the end of the CSS file wins (Purple).</span>
+  </div>
+
+  <!-- Test 4: Assignment Selectors -->
+  <div>
+    <h2>4. My Assignment Selectors</h2>
+
+    <nav id="nav">
+      <ul>
+        <li class="item">
+          <a href="#">Link 1: #nav .item a (Strongest)</a>
+        </li>
+      </ul>
+    </nav>
+
+    <ul class="first-child-demo">
+      <li>First child item (ul li:first-child)</li>
+      <li>Normal item</li>
+    </ul>
+
+    <div>
+      <button class="btn primary">Button (.btn.primary)</button>
+    </div>
+
+    <br>
+    <div>
+      <a href="#" class="hover-test-link">Hover me (a:hover)</a>
+    </div>
+  </div>
+
+</body>
+</html>

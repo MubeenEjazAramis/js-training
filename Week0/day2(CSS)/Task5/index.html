@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Margin Collapse Test</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <div>
+    <h1>Margin Collapse (Weird CSS Behavior)</h1>
+    <p>Testing why top and bottom margins don't add up properly.</p>
+  </div>
+
+  <hr>
+
+  <!-- Test 1: Top & Bottom (They collapse) -->
+  <div>
+    <h2>1. Top and Bottom Margins (The bigger one wins)</h2>
+    
+    <div class="box1">
+      Box 1 (margin-bottom: 40px)
+    </div>
+    
+    <div class="box2">
+      Box 2 (margin-top: 25px)
+    </div>
+
+    <p><b>Wait!</b> 40px + 25px should be a 65px gap, right? But the gap is only 40px on the screen. The 40px margin ate the 25px margin!</p>
+  </div>
+
+  <br><br>
+
+  <!-- Test 2: Left & Right (Normal behavior) -->
+  <div>
+    <h2>2. Left and Right Margins (These are normal)</h2>
+    
+    <span class="box-left">Left Box (margin-right: 20px)</span>
+    <span class="box-right">Right Box (margin-left: 20px)</span>
+    
+    <p>Total gap here is 40px (20+20). So horizontal margins do NOT collapse. Good to know!</p>
+  </div>
+
+</body>
+</html>

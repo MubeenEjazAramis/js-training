@@ -1,0 +1,35 @@
+body {
+  font-family: Arial;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* Box 1 aur Box 2 ka margin test */
+.box1 {
+  background-color: lightblue;
+  padding: 20px;
+  margin-bottom: 40px; /* Ye bara hai isliye ye jeetega */
+  border: 1px solid blue;
+}
+
+.box2 {
+  background-color: lightgreen;
+  padding: 20px;
+  margin-top: 25px; /* Ye chota hai isliye ye collapse ho jayega */
+  border: 1px solid green;
+}
+
+/* Left aur Right ka test */
+.box-left {
+  background-color: pink;
+  padding: 10px;
+  margin-right: 20px;
+  display: inline-block;
+}
+
+.box-right {
+  background-color: yellow;
+  padding: 10px;
+  margin-left: 20px;
+  display: inline-block;
+}
