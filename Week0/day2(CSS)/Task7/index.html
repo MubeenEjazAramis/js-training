@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Variables Test</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <div class="main-container">
+    <h1>CSS Variables (Custom Properties)</h1>
+    <p>Testing how to use variables so I don't have to write the same colors again and again.</p>
+
+    <hr>
+
+    <!-- My Card -->
+    <div class="my-card">
+      <h2>The Magic Card</h2>
+      <p>
+        The border, background, and button colors on this card are all coming from variables. 
+      </p>
+      <p>
+        If I change the `--main-color` in CSS just once, the border and the button will automatically change their colors together!
+      </p>
+      
+      <button class="btn btn-primary">Primary Action</button>
+      <button class="btn btn-secondary">Secondary Action</button>
+    </div>
+
+    <br>
+
+    <!-- List of variables -->
+    <div class="my-card">
+      <h3>Variables I created in CSS:</h3>
+      <ul>
+        <li><b>Colors:</b> <code>--main-color</code>, <code>--bg-color</code></li>
+        <li><b>Spaces:</b> <code>--space-small</code>, <code>--space-big</code></li>
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>

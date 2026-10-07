@@ -1,0 +1,48 @@
+/* Step 1: Making variables in the root (so whole page can use them) */
+:root {
+  --main-color: blue;
+  --secondary-color: gray;
+  --bg-color: #f4f4f4;
+  --card-bg: white;
+  
+  --space-small: 10px;
+  --space-big: 20px;
+}
+
+/* Step 2: Using the variables with var() */
+body {
+  font-family: Arial;
+  background-color: var(--bg-color);
+  padding: var(--space-big);
+}
+
+.main-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.my-card {
+  background-color: var(--card-bg);
+  padding: var(--space-big);
+  border-top: 5px solid var(--main-color); /* Main color used here */
+  border-radius: 8px;
+  margin-bottom: var(--space-big);
+}
+
+.btn {
+  padding: var(--space-small) var(--space-big); /* Space variables used here */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background-color: var(--main-color); /* Main color used here too */
+  color: white;
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
