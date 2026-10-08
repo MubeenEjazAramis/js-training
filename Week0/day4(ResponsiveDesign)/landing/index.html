@@ -11,8 +11,20 @@
   <header class="header">
     <img src="logo.png" alt="TaskFlow Logo">
 
+    <div class="header-actions">
+      <label class="theme-switch" for="theme-toggle" title="Toggle dark/light mode">
+        <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="slider">
+          <span class="icon-sun">☀️</span>
+          <span class="icon-moon">🌙</span>
+          <span class="slider-thumb"></span>
+        </span>
+      </label>
+
+      <label for="menu-toggle" class="menu-btn">&#9776;</label>
+    </div>
+
     <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="menu-btn">&#9776;</label>
 
     <nav class="nav">
       <a href="#features">Features</a>
@@ -145,5 +157,29 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      const toggle = document.getElementById('theme-toggle');
+      if (!toggle) return;
+
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+
+      if (isDark) {
+        toggle.checked = true;
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        toggle.checked = false;
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+
+      toggle.addEventListener('change', function () {
+        const theme = this.checked ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+      });
+    })();
+  </script>
 </body>
 </html>
