@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow - Responsive Landing Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <img src="logo.png" alt="TaskFlow Logo">
+
+    <div class="header-actions">
+      <label class="theme-switch" for="theme-toggle" title="Toggle dark/light mode">
+        <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="slider">
+          <span class="icon-sun">☀️</span>
+          <span class="icon-moon">🌙</span>
+          <span class="slider-thumb"></span>
+        </span>
+      </label>
+
+      <label for="menu-toggle" class="menu-btn">&#9776;</label>
+    </div>
+
+    <input type="checkbox" id="menu-toggle">
+
+    <nav class="nav">
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#pricing" class="btn-nav">Get Started</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Manage Your Daily Work Faster</h1>
+      <p>TaskFlow helps teams organize tasks, track deadlines, and collaborate smoothly in one simple place.</p>
+      <a href="#pricing" class="btn-primary">Start Free Trial</a>
+    </div>
+    <div class="hero-image">
+      <div class="image-box">App Preview</div>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <h2>Features</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>Fast Setup</h3>
+        <p>Get started in minutes with zero complicated configuration.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Real-time Stats</h3>
+        <p>Track your team progress with clean visual reports.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Secure Storage</h3>
+        <p>All your tasks and documents are encrypted and safe.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing">
+    <h2>Pricing Plans</h2>
+    <div class="pricing-row">
+      <div class="pricing-card">
+        <h3>Basic</h3>
+        <div class="price">$9<span>/mo</span></div>
+        <ul>
+          <li>5 Projects</li>
+          <li>Basic Analytics</li>
+          <li>Email Support</li>
+        </ul>
+        <button class="btn-plan">Choose Basic</button>
+      </div>
+
+      <div class="pricing-card highlighted">
+        <div class="plan-badge">Popular</div>
+        <h3>Pro</h3>
+        <div class="price">$29<span>/mo</span></div>
+        <ul>
+          <li>Unlimited Projects</li>
+          <li>Advanced Analytics</li>
+          <li>24/7 Priority Support</li>
+          <li>Custom Integrations</li>
+        </ul>
+        <button class="btn-plan btn-highlighted">Choose Pro</button>
+      </div>
+
+      <div class="pricing-card">
+        <h3>Enterprise</h3>
+        <div class="price">$79<span>/mo</span></div>
+        <ul>
+          <li>Dedicated Server</li>
+          <li>Custom Workflows</li>
+          <li>Account Manager</li>
+        </ul>
+        <button class="btn-plan">Choose Enterprise</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <h2>What People Say</h2>
+    <div class="testimonials-row">
+      <div class="testimonial-card">
+        <p>"TaskFlow saved our team hours every week. It's clean and easy to use."</p>
+        <h4>- Ali Khan</h4>
+      </div>
+      <div class="testimonial-card">
+        <p>"The best project tool we have used so far. Simple and fast."</p>
+        <h4>- Sara Ahmed</h4>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <details>
+        <summary>Can I try TaskFlow for free?</summary>
+        <p>Yes, we offer a 14-day free trial on all plans without needing a credit card.</p>
+      </details>
+      <details>
+        <summary>Can I cancel anytime?</summary>
+        <p>Yes, you can cancel your subscription from your account settings whenever you want.</p>
+      </details>
+      <details>
+        <summary>Do you offer student discounts?</summary>
+        <p>Yes, contact our support team with your student ID to get 50% off.</p>
+      </details>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>TaskFlow</h4>
+        <p>The simple task manager for modern teams.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const toggle = document.getElementById('theme-toggle');
+      if (!toggle) return;
+
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+
+      if (isDark) {
+        toggle.checked = true;
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        toggle.checked = false;
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+
+      toggle.addEventListener('change', function () {
+        const theme = this.checked ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+      });
+    })();
+  </script>
+</body>
+</html>
