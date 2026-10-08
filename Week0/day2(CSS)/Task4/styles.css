@@ -1,0 +1,55 @@
+body {
+  font-family: Arial;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* Box 1 */
+.normal-parent {
+  font-size: 16px; 
+  background-color: white;
+  padding: 15px;
+  border: 1px solid gray;
+}
+
+/* Box 2: Testing what happens when parent size changes */
+.big-parent {
+  font-size: 24px; 
+  background-color: white;
+  padding: 15px;
+  border: 1px solid gray;
+  margin-top: 20px;
+}
+
+/* Different unit classes */
+.size-px { font-size: 24px; }
+.size-em { font-size: 1.5em; }
+.size-rem { font-size: 1.5rem; }
+.size-pct { font-size: 150%; }
+
+/* Nesting Test */
+.bad-em {
+  font-size: 1.2em; /* Em multiplies with its parent */
+  border: 1px solid red;
+  padding: 10px;
+  margin: 10px;
+  background-color: #ffe6e6;
+}
+
+.good-rem {
+  font-size: 1.2rem; /* Rem only looks at the root, so it stays safe */
+  border: 1px solid green;
+  padding: 10px;
+  margin: 10px;
+  background-color: #e6ffe6;
+}
+
+/* Test 4: Root font size test box */
+/* Toggle or change html font-size to 20px in DevTools to see rem scale while px stays fixed */
+/* html { font-size: 20px; } */
+.root-test-box {
+  background-color: white;
+  padding: 15px;
+  border: 1px solid gray;
+  margin-top: 10px;
+}

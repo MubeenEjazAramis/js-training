@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Box Model Test</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <div>
+    <h1>Box Model: content-box vs border-box</h1>
+    <p>I gave both boxes the exact same CSS values:</p>
+    <ul>
+      <li>width: 200px;</li>
+      <li>padding: 20px;</li>
+      <li>border: 5px solid;</li>
+      <li>margin: 10px;</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <!-- Box A: Default behavior -->
+  <div>
+    <h2>Box A: Default Box (content-box)</h2>
+    
+    <div class="box box-content">
+      <div class="box-text">Content Area</div>
+    </div>
+    
+    <p><b>Actual size on screen: 250px</b></p>
+    <p>Calculation: 200px (width) + 40px (padding) + 10px (border) = 250px.</p>
+  </div>
+
+  <br>
+
+  <!-- Box B: What we should actually use -->
+  <div>
+    <h2>Box B: Better Box (border-box)</h2>
+    
+    <div class="box box-border">
+      <div class="box-text">Content Area</div>
+    </div>
+    
+    <p><b>Actual size on screen: 200px</b></p>
+    <p>Calculation: Total size stays 200px. The inside text area shrinks to 150px to adjust the padding and border inside it.</p>
+  </div>
+
+</body>
+</html>

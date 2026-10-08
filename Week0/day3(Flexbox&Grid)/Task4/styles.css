@@ -1,0 +1,33 @@
+body {
+  font-family: Arial;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background-color: #d1ecf1;
+  border: 2px solid #0c5460;
+  margin: 20px;
+}
+
+.grid-container {
+
+  display: grid;
+  place-items: center;
+  height: 300px;
+  background-color: #d4edda;
+  border: 2px solid #155724;
+  margin: 20px;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  width: 200px;
+  border: 1px solid black;
+  border-radius: 10px;
+}

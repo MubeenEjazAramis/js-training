@@ -1,0 +1,33 @@
+body {
+  font-family: Arial;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+/* Dono boxes ki same properties */
+.box {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid blue;
+  margin: 20px;
+  background-color: lightblue;
+  height: 80px;
+}
+
+/* Andar wala text area dikhane ke liye */
+.box-text {
+  background-color: darkblue;
+  color: white;
+  padding: 5px;
+  text-align: center;
+}
+
+/* Box 1 - default CSS behavior (jo layout kharab karta hai) */
+.box-content {
+  box-sizing: content-box;
+}
+
+/* Box 2 - modern standard (humesha yehi use karna hai) */
+.box-border {
+  box-sizing: border-box;
+}
