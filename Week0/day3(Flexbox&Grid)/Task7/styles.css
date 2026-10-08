@@ -7,14 +7,14 @@
 
 .layout {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns:  1fr 5fr;
   grid-template-rows: 60px 1fr 60px;
   grid-template-areas:
     "header header"
     "sidebar main"
     "footer footer";
   height: 100vh;
-  gap: 10px;
+  gap: 3px;
   padding: 10px;
   background-color: #f4f4f4;
 }
@@ -25,6 +25,7 @@
   color: white;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0 20px;
   border-radius: 6px;
 }

@@ -14,15 +14,16 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 60px;
+  padding: 20px 40px;
   background-color: #ffffff;
   border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0px;
 }
 
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-  color: #2563eb;
+img{
+  width: 170px;
+  height: auto;
 }
 
 .nav {
@@ -38,7 +39,7 @@ body {
 }
 
 .nav a:hover {
-  color: #2563eb;
+  color: #ee294a;
 }
 
 .btn-nav {
