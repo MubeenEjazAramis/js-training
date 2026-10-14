@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <header class="app-header">
+      <h1>My To-Do List</h1>
+      <p class="subtitle">Week 1 Day 4 - DOM &amp; Events</p>
+    </header>
+
+    <!-- Task Input Form -->
+    <form id="todo-form">
+      <input 
+        type="text" 
+        id="todo-input" 
+        placeholder="What needs to be done?" 
+        autocomplete="off"
+      >
+      <button type="submit" id="add-btn">Add Task</button>
+    </form>
+
+    <!-- Filter Buttons -->
+    <div class="filters">
+      <button type="button" class="filter-btn active" data-filter="all">All</button>
+      <button type="button" class="filter-btn" data-filter="active">Active</button>
+      <button type="button" class="filter-btn" data-filter="done">Done</button>
+    </div>
+
+    <!-- Task List -->
+    <ul id="todo-list"></ul>
+
+    <!-- Footer with Task Count & Clear Completed -->
+    <footer class="app-footer">
+      <span id="tasks-left">0 tasks left</span>
+      <button type="button" id="clear-completed-btn">Clear completed</button>
+    </footer>
+
+    <!-- Instructions / Hints -->
+    <div class="hints">
+      <p>Tip: Double-click a task to edit it. Press Enter to save, or Escape to cancel.</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
