@@ -99,17 +99,58 @@ export default function RecipeDetailModal({ mealId, onClose }) {
           onClick={onClose}
           aria-label="Close modal (Escape)"
         >
-          ✕
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
         </button>
 
         {loading ? (
           <div style={{ padding: '4rem', textAlign: 'center' }}>
-            <div className="message-icon">⏳</div>
+            <div className="message-icon" style={{ color: 'var(--accent-primary)' }}>
+              <svg
+                width="44"
+                height="44"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
             <h3>Loading recipe details...</h3>
           </div>
         ) : error ? (
           <div style={{ padding: '3rem', textAlign: 'center' }}>
-            <div className="message-icon">⚠️</div>
+            <div className="message-icon" style={{ color: '#ef4444' }}>
+              <svg
+                width="44"
+                height="44"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+                <line x1="12" y1="9" x2="12" y2="13" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg>
+            </div>
             <h3>{error}</h3>
             <button
               type="button"
@@ -135,12 +176,12 @@ export default function RecipeDetailModal({ mealId, onClose }) {
                 <div className="modal-badges">
                   {mealDetails.strCategory && (
                     <span className="modal-badge badge-cat">
-                      📂 {mealDetails.strCategory}
+                      Category: {mealDetails.strCategory}
                     </span>
                   )}
                   {mealDetails.strArea && (
                     <span className="modal-badge badge-area">
-                      🌍 {mealDetails.strArea} Cuisine
+                      {mealDetails.strArea} Cuisine
                     </span>
                   )}
                   {mealDetails.strTags && (
@@ -148,7 +189,7 @@ export default function RecipeDetailModal({ mealId, onClose }) {
                       className="modal-badge"
                       style={{ background: 'rgba(255,255,255,0.1)' }}
                     >
-                      🏷️ {mealDetails.strTags.split(',').join(', ')}
+                      Tags: {mealDetails.strTags.split(',').join(', ')}
                     </span>
                   )}
                 </div>
@@ -158,7 +199,7 @@ export default function RecipeDetailModal({ mealId, onClose }) {
             <div className="modal-body">
               <section className="modal-section">
                 <h3 className="modal-section-title">
-                  <span>🥕</span> Ingredients & Measurements
+                  Ingredients & Measurements
                 </h3>
                 <div className="ingredients-grid">
                   {ingredientsList.map((item) => (
@@ -172,7 +213,7 @@ export default function RecipeDetailModal({ mealId, onClose }) {
 
               <section className="modal-section">
                 <h3 className="modal-section-title">
-                  <span>📖</span> Cooking Instructions
+                  Cooking Instructions
                 </h3>
                 <p className="instructions-text">{mealDetails.strInstructions}</p>
               </section>
@@ -185,7 +226,16 @@ export default function RecipeDetailModal({ mealId, onClose }) {
                     rel="noopener noreferrer"
                     className="action-link link-youtube"
                   >
-                    ▶ Watch Video on YouTube
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      style={{ marginRight: '0.25rem' }}
+                    >
+                      <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                    </svg>
+                    Watch Video on YouTube
                   </a>
                 )}
                 {mealDetails.strSource && (
@@ -195,7 +245,22 @@ export default function RecipeDetailModal({ mealId, onClose }) {
                     rel="noopener noreferrer"
                     className="action-link link-source"
                   >
-                    🔗 View Original Source
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      style={{ marginRight: '0.25rem' }}
+                    >
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                    View Original Source
                   </a>
                 )}
               </div>
