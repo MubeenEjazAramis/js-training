@@ -7,20 +7,16 @@ import { useState } from 'react';
  * Proves the core architectural requirement:
  * - "Form state is one object; error messages are calculated, not stored."
  */
-export default function StateInspector({ stateSnapshot }) {
+export default function StateInspector({
+  formData = {},
+  touched = {},
+  errors = {},
+  isValid = false,
+  isSubmitting = false,
+  isSubmitted = false,
+  passwordStrength = { color: 'neutral', label: 'Empty', score: 0 },
+}) {
   const [isOpen, setIsOpen] = useState(false);
-
-  if (!stateSnapshot) return null;
-
-  const {
-    formData,
-    touched,
-    errors,
-    isValid,
-    isSubmitting,
-    isSubmitted,
-    passwordStrength,
-  } = stateSnapshot;
 
   return (
     <div className={`state-inspector-card ${isOpen ? 'is-open' : 'is-collapsed'}`}>

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import FormField from './FormField';
 import PasswordStrengthMeter from './PasswordStrengthMeter';
 import SuccessView from './SuccessView';
+import StateInspector from './StateInspector';
 import { calculateErrors, calculatePasswordStrength, COUNTRIES } from '../utils/validation';
 
 /**
@@ -27,7 +28,7 @@ const INITIAL_FORM_DATA = {
  * 4. Password strength meter evaluating complexity.
  * 5. Submit disabled until valid; 1.5s fake API call before showing success screen.
  */
-export default function SignupForm({ onStateChange }) {
+export default function SignupForm() {
   // 1. Single state object for all input fields
   const [formData, setFormData] = useState(INITIAL_FORM_DATA);
 
@@ -46,19 +47,6 @@ export default function SignupForm({ onStateChange }) {
 
   // Compute password strength from current password value
   const passwordStrength = calculatePasswordStrength(formData.password);
-
-  // Expose current snapshot to parent for optional DevTools/State Inspector
-  if (onStateChange) {
-    onStateChange({
-      formData,
-      touched,
-      errors,
-      isValid,
-      isSubmitting,
-      isSubmitted,
-      passwordStrength,
-    });
-  }
 
   /**
    * Universal change handler for all input fields.
@@ -149,11 +137,25 @@ export default function SignupForm({ onStateChange }) {
 
   // If successfully submitted, render the SuccessView
   if (isSubmitted) {
-    return <SuccessView formData={formData} onReset={handleReset} />;
+    return (
+      <div className="form-view-wrapper">
+        <SuccessView formData={formData} onReset={handleReset} />
+        <StateInspector
+          formData={formData}
+          touched={touched}
+          errors={errors}
+          isValid={isValid}
+          isSubmitting={isSubmitting}
+          isSubmitted={isSubmitted}
+          passwordStrength={passwordStrength}
+        />
+      </div>
+    );
   }
 
   return (
-    <div className="signup-card">
+    <div className="form-view-wrapper">
+      <div className="signup-card">
       <div className="form-header">
         <h2 className="form-title">Create Your Account</h2>
         <p className="form-subtitle">
@@ -331,5 +333,17 @@ export default function SignupForm({ onStateChange }) {
         </p>
       </form>
     </div>
+
+    {/* State & React DevTools Inspector */}
+    <StateInspector
+      formData={formData}
+      touched={touched}
+      errors={errors}
+      isValid={isValid}
+      isSubmitting={isSubmitting}
+      isSubmitted={isSubmitted}
+      passwordStrength={passwordStrength}
+    />
+  </div>
   );
 }

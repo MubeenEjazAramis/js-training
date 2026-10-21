@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import SignupForm from './components/SignupForm';
-import StateInspector from './components/StateInspector';
 import VisualStatesGuide from './components/VisualStatesGuide';
 import EvaluationGuide from './components/EvaluationGuide';
 import Footer from './components/Footer';
@@ -25,9 +24,6 @@ export default function App() {
 
   // Active navigation tab
   const [activeTab, setActiveTab] = useState('form');
-
-  // Holds current live form state snapshot for the inspector
-  const [liveSnapshot, setLiveSnapshot] = useState(null);
 
   // Sync theme attribute on document root
   useEffect(() => {
@@ -57,13 +53,7 @@ export default function App() {
       <main className="main-content">
         <div className="content-container">
           {activeTab === 'form' && (
-            <div className="form-view-wrapper">
-              {/* Primary Signup Form */}
-              <SignupForm onStateChange={setLiveSnapshot} />
-
-              {/* Collapsible React DevTools / State Inspector */}
-              <StateInspector stateSnapshot={liveSnapshot} />
-            </div>
+            <SignupForm />
           )}
 
           {activeTab === 'visual-states' && (
